@@ -1,0 +1,23 @@
+C:\spring-2.2.1.RELEASE\bin
+Add this to path environment variables after installation of CLI
+
+HelloController.groovy
+-----------------------------------
+@RestController
+public class HelloController
+{
+	@RequestMapping("/hello")
+	public String sayHello()
+	{
+		return "<h1 style='color:maroon' align='center'>Hello from Groovy app!</h1>";
+	}
+}
+------------------------------------------------------------------------
+application.properties
+--------------------------------
+server.port=1234
+
+Steps to run the application
+--->Go to the app folder in CommandPrompt
+ -->  spring run HelloController.groovy   ---execute command
+access the application in browser with http://localhost:1234/hello
