@@ -1,0 +1,37 @@
+Bootapp03Application.java
+-------------------------------------------
+package com.ashsoft;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Bootapp03Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Bootapp03Application.class, args);
+		System.out.println("This app is created using Spring Initializr");
+	}
+
+}
+---------------------------------------------------------------------------------------------------
+HelloController.java
+----------------------------
+package com.ashsoft.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+   
+	@RequestMapping("/hello")
+	public String sayHello()
+	{
+		return "<h1 style='color:blue' align='center'>Hello from Spring Boot</h1>";
+	}
+}
+--------------------------------------------------------------------------------------------------
+application.properties
+--------------------------------
+server.port = 1234
