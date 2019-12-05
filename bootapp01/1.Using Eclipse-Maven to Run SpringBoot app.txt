@@ -1,0 +1,76 @@
+pom.xml
+-------------
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ashsoft</groupId>
+	<artifactId>bootapp01</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Hello App</name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				 <version>3.8.1</version><!--$NO-MVN-MAN-VER$-->
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.5.RELEASE</version>
+	</parent>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.1.5.RELEASE</version><!--$NO-MVN-MAN-VER$-->
+		</dependency>
+	</dependencies>
+</project>
+------------------------------------------------------------------------------------------------------
+Test.java
+------------
+package com.ashsoft.test;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Test {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Test.class, args);
+		System.out.println("Spring Boot app using Eclipse");
+
+	}
+
+}
+-----------------------------------------------------------------------------------------------------
+HelloController.java
+-----------------------------
+package com.ashsoft.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+   
+	@RequestMapping("/hello")
+	public String sayHello()
+	{
+		return "<h1 style='color:blue' align='center'>Hello From Eclipse</h1>";
+	}
+}
+---------------------------------------------------------------------------------------------------
+application.properties
+-------------------------------
+server.port = 1234
