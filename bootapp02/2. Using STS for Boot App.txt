@@ -1,0 +1,38 @@
+Bootapp02Application.java
+------------------------------------------
+package com.ashsoft;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Bootapp02Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Bootapp02Application.class, args);
+		System.out.println("********Welcome to SpringBoot************");
+	}
+
+}
+-----------------------------------------------------------------------------------------------------
+application.properties
+-------------------------------
+server.port = 1234
+--------------------------------------------------------------------------------------------------------
+HelloController.java
+---------------------------
+package com.ashsoft.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+   
+	@RequestMapping("/hello")
+	public String sayHello()
+	{
+		return "<h1 style='color:green' align='center'>Hello User! Welcome to SpringBoot.</h1>";
+	}
+}
+
